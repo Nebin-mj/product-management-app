@@ -1,0 +1,113 @@
+html {
+   scroll-behavior: smooth;
+}
+.container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 2rem;
+}
+.tab-content {
+   width: 100%;
+}
+#pills-find label[for="find-id"] {
+   width: 100%;
+   text-align: center;
+}
+.tab-pane.show.active {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.tab-pane.show.active > * {
+   margin: 1rem;
+}
+
+.btn:not(.input-group .btn) {
+   width: 100%;
+}
+.hidden {
+   display: none;
+}
+.add-form,
+.update-form {
+   width: 100%;
+}
+.products {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: stretch;
+}
+
+.products > .card {
+   margin: 1rem;
+}
+
+.card {
+   flex-shrink: 0;
+}
+
+.card li:first-child {
+   display: flex;
+}
+
+.card li i {
+   color: #0d6efd;
+   position: relative;
+}
+
+.card li:first-child span:last-child {
+   margin-left: auto;
+}
+
+[desc="Update Product"]::after {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   content: attr(desc);
+   font-weight: lighter;
+   font-size: 0.65rem;
+   position: absolute;
+   top: 0;
+   left: 50%;
+   padding: 0.3rem;
+   border-radius: 0.3rem;
+   transform: translate(-50%, -100%);
+   opacity: 0;
+   background-color: rgba(0, 0, 0, 0.514);
+   color: white;
+   transition: opacity 200ms ease;
+}
+[desc="Update Product"]:hover::after {
+   opacity: 1;
+}
+
+[desc="Delete Product"]::after {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   content: attr(desc);
+   font-weight: lighter;
+   font-size: 0.65rem;
+   position: absolute;
+   top: 0;
+   left: 50%;
+   padding: 0.3rem;
+   border-radius: 0.3rem;
+   transform: translate(-50%, -100%);
+   opacity: 0;
+   background-color: rgba(0, 0, 0, 0.514);
+   color: white;
+   transition: opacity 200ms ease;
+}
+[desc="Delete Product"]:hover::after {
+   opacity: 1;
+}
+
+.list-group {
+   height: 100%;
+}
+
+.list-group-item:nth-child(3) {
+   flex-grow: 1;
+   display: grid;
+   place-items: center;
+}

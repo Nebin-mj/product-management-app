@@ -1,0 +1,22 @@
+<template>
+   {{#each products}}
+      <div class="card" style="width: 18rem">
+         <ul class="list-group list-group-flush">
+            {{#if this.msg}}
+               <li class="list-group-item">{{this.msg}}</li>
+            {{else}}
+               <li class="list-group-item">
+                  {{this.id}}
+                  <span>
+                     <i desc="Update Product" class="fas fa-edit"></i>
+                     <i desc="Delete Product" class="fas fa-trash"></i>
+                  </span>
+               </li>
+               <li class="list-group-item">{{this.name}}</li>
+               <li class="list-group-item">{{this.description}}</li>
+               <li class="list-group-item">&dollar;{{this.price}}</li>
+            {{/if}}
+         </ul>
+      </div>
+   {{/each}}
+</template>
