@@ -96,6 +96,7 @@ addGlobalListener(".upd-find-btn", "click", async () => {
             val.removeAttribute("disabled");
          });
          document.querySelector(".update-btn").removeAttribute("disabled");
+         fillUpdateForm(response.product);
       } else {
          idField.setAttribute("placeholder", response.err);
          console.error(response.err);
@@ -121,6 +122,7 @@ addGlobalListener(".fas.fa-edit", "click", async e => {
             val.removeAttribute("disabled");
          });
          document.querySelector(".update-btn").removeAttribute("disabled");
+         fillUpdateForm(response.product);
       } else {
          document.querySelector("#update-id").value = "";
          updateIdField.setAttribute("placeholder", response.err);
@@ -225,6 +227,13 @@ function renderTemplate(dataObj) {
       products = [dataObj];
    }
    return render({ products });
+}
+
+//update form fields are pre populated with product details passed as 'product' object
+function fillUpdateForm(product) {
+   document.querySelector("#update-name").value = product.name;
+   document.querySelector("#update-description").value = product.description;
+   document.querySelector("#update-price").value = product.price;
 }
 
 //Toggles loading animation on button
